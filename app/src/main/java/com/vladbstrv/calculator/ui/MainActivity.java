@@ -11,7 +11,6 @@ import com.vladbstrv.calculator.R;
 public class MainActivity extends AppCompatActivity{
 
     private TextView tvInput;
-    private TextView tvOutput;
 
     private CalculatorPresenter presenter;
 
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         tvInput = findViewById(R.id.tvInput);
-        tvOutput = findViewById(R.id.tvOutput);
         presenter = new CalculatorPresenter();
 
         int[] digitIds = new int[]{
