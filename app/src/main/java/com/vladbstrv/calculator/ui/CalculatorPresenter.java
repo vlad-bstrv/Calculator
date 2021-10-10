@@ -1,10 +1,14 @@
 package com.vladbstrv.calculator.ui;
 
 import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.vladbstrv.calculator.R;
 
-public class CalculatorPresenter {
+import java.io.Serializable;
+
+public class CalculatorPresenter implements Parcelable {
 
     private double firstArg;
     private double secondArg;
@@ -14,6 +18,36 @@ public class CalculatorPresenter {
     private int actionSelected;
 
     private State state;
+
+    protected CalculatorPresenter(Parcel in) {
+        firstArg = in.readDouble();
+        secondArg = in.readDouble();
+        actionSelected = in.readInt();
+    }
+
+    public static final Creator<CalculatorPresenter> CREATOR = new Creator<CalculatorPresenter>() {
+        @Override
+        public CalculatorPresenter createFromParcel(Parcel in) {
+            return new CalculatorPresenter(in);
+        }
+
+        @Override
+        public CalculatorPresenter[] newArray(int size) {
+            return new CalculatorPresenter[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeDouble(firstArg);
+        dest.writeDouble(secondArg);
+        dest.writeInt(actionSelected);
+    }
 
     private enum State {
         firstArgInput,

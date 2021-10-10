@@ -1,8 +1,10 @@
 package com.vladbstrv.calculator.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,6 +15,9 @@ public class MainActivity extends AppCompatActivity{
     private TextView tvInput;
 
     private CalculatorPresenter presenter;
+
+    final static String inputKey = "INPUT";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +81,19 @@ public class MainActivity extends AppCompatActivity{
                 tvInput.setText(presenter.getText());
             }
         });
+    }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelable(inputKey, presenter);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        presenter = savedInstanceState.getParcelable(inputKey);
+        tvInput.setText(presenter.getText());
     }
 }
