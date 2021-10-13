@@ -30,77 +30,66 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClear"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/clear"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLeft"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/left"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRight"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/right"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDivide"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/divide"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn1"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn1"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn2"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn2"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn3"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn3"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMultiply"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btnMultiply"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn4"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn4"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn5"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn5"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn6"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn6"
             app:cornerRadius="@dimen/button_radius" />
 
@@ -114,28 +103,24 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn7"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn7"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn8"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/bnt8"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn9"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btn9"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPlus"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btnPlus"
             app:cornerRadius="@dimen/button_radius" />
 
@@ -150,14 +135,12 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDot"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btnPoint"
             app:cornerRadius="@dimen/button_radius" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEqually"
             style="@style/BtnStyle"
-            android:layout_columnWeight="1"
             android:text="@string/btnEqually"
             app:cornerRadius="@dimen/button_radius" />
 
