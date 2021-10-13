@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity{
 
     private TextView tvInput;
 
-    private CalculatorPresenter presenter;
+    private Calculator presenter;
 
     final static String inputKey = "INPUT";
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         tvInput = findViewById(R.id.tvInput);
-        presenter = new CalculatorPresenter();
+        presenter = new Calculator();
 
         int[] digitIds = new int[]{
                 R.id.btn0,
