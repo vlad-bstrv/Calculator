@@ -21,8 +21,8 @@ public class ThemeStorage {
 
     public Theme getTheme() {
         String key = sharedPreferences.getString(ARG_THEME, Theme.THEME_ONE.getKey());
-        for (Theme theme: Theme.values()) {
-            if(theme.getKey().equals(key)) {
+        for (Theme theme : Theme.values()) {
+            if (theme.getKey().equals(key)) {
                 return theme;
             }
         }

@@ -19,7 +19,7 @@ import com.vladbstrv.calculator.R;
 import com.vladbstrv.calculator.domain.Theme;
 import com.vladbstrv.calculator.storage.ThemeStorage;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private TextView tvInput;
 
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public void onActivityResult(ActivityResult result) {
 
-            if(result.getResultCode() == Activity.RESULT_OK) {
-                if(result.getData() != null) {
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                if (result.getData() != null) {
                     Theme theme = (Theme) result.getData().getSerializableExtra(ARG_THEME);
 
                     storage.setTheme(theme);
