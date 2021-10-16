@@ -3,8 +3,8 @@
     <dimen name="button_width">0dp</dimen>
     <dimen name="button_height">80dp</dimen>
     <dimen name="button_radius">0dp</dimen>
-    <dimen name="button_insetBottom">0dp</dimen>
-    <dimen name="button_insetTop">0dp</dimen>
+    <dimen name="button_inset_Bottom">0dp</dimen>
+    <dimen name="button_inset_Top">0dp</dimen>
     <dimen name="tvInput_textSize">50sp</dimen>
     <dimen name="tvInput_padding">16dp</dimen>
     <dimen name="button_height_land">60dp</dimen>
