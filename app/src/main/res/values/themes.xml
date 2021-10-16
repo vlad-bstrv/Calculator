@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Calculator.Version2">
+        <item name="colorPrimary">@color/purple_500_version2</item>
+    </style>
+
+    <style name="Theme.Calculator.Version3">
+        <item name="colorPrimary">@color/purple_500_version3</item>
+    </style>
+
+    <style name="Theme.Calculator.Version4">
+        <item name="colorPrimary">@color/purple_500_version4</item>
+    </style>
 </resources>

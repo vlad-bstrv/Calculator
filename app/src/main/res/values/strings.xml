@@ -19,4 +19,8 @@
     <string name="btnMinus">-</string>
     <string name="btnPlus">+</string>
     <string name="btnEqually">=</string>
+    <string name="theme_one">One</string>
+    <string name="theme_two">Two</string>
+    <string name="theme_three">Three</string>
+    <string name="theme_four">Four</string>
 </resources>

@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btn_background">#FEDBD0</color>
     <color name="btn_text">#442C2E</color>
+    <color name="purple_500_version2">#E91E63</color>
+    <color name="purple_500_version3">#CDDC39</color>
+    <color name="purple_500_version4">#2196F3</color>
 </resources>
