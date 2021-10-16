@@ -4,14 +4,23 @@
     <style name="BtnStyle">
         <item name="android:backgroundTint">@color/btn_background</item>
         <item name="android:textColor">@color/btn_text</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">@dimen/button_insetBottom</item>
+        <item name="android:insetTop">@dimen/button_insetTop</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:layout_columnWeight">1</item>
+    </style>
+
+    <style name="BtnStyle.BtnStyleLand">
+        <item name="android:layout_height">@dimen/button_height_land</item>
+
     </style>
 
     <style name="TextViewStyle">
         <item name="android:gravity">end</item>
-        <item name="android:textSize">50sp</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:textSize">@dimen/tvInput_textSize</item>
+        <item name="android:padding">@dimen/tvInput_padding</item>
     </style>
 
 </resources>

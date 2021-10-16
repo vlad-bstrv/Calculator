@@ -6,9 +6,7 @@ import android.os.Parcelable;
 
 import com.vladbstrv.calculator.R;
 
-import java.io.Serializable;
-
-public class CalculatorPresenter implements Parcelable {
+public class Calculator implements Parcelable {
 
     private double firstArg;
     private double secondArg;
@@ -19,21 +17,21 @@ public class CalculatorPresenter implements Parcelable {
 
     private State state;
 
-    protected CalculatorPresenter(Parcel in) {
+    protected Calculator(Parcel in) {
         firstArg = in.readDouble();
         secondArg = in.readDouble();
         actionSelected = in.readInt();
     }
 
-    public static final Creator<CalculatorPresenter> CREATOR = new Creator<CalculatorPresenter>() {
+    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
         @Override
-        public CalculatorPresenter createFromParcel(Parcel in) {
-            return new CalculatorPresenter(in);
+        public Calculator createFromParcel(Parcel in) {
+            return new Calculator(in);
         }
 
         @Override
-        public CalculatorPresenter[] newArray(int size) {
-            return new CalculatorPresenter[size];
+        public Calculator[] newArray(int size) {
+            return new Calculator[size];
         }
     };
 
@@ -50,27 +48,27 @@ public class CalculatorPresenter implements Parcelable {
     }
 
     private enum State {
-        firstArgInput,
-        secondArgInput,
-        resultShow,
-        operationSelected
+        FIRST_ARG_INPUT,
+        SECOND_ARG_INPUT,
+        RESULT_SHOW,
+        OPERATION_SELECTED
     }
 
 
-    public CalculatorPresenter() {
-        state = State.firstArgInput;
+    public Calculator() {
+        state = State.FIRST_ARG_INPUT;
     }
 
     @SuppressLint("NonConstantResourceId")
     public void onDigitPressed(int digitId) {
         //onNumPressed
-        if (state == State.resultShow) {
-            state = State.firstArgInput;
+        if (state == State.RESULT_SHOW) {
+            state = State.FIRST_ARG_INPUT;
             inputStr.setLength(0);
         }
 
-        if (state == State.operationSelected) {
-            state = State.secondArgInput;
+        if (state == State.OPERATION_SELECTED) {
+            state = State.SECOND_ARG_INPUT;
             inputStr.setLength(0);
         }
 
@@ -118,9 +116,9 @@ public class CalculatorPresenter implements Parcelable {
     public void onOperationPressed(int actionId) {
         //onActionPressed
 
-        if (actionId == R.id.btnEqually && state == State.secondArgInput && inputStr.length() > 0) {
+        if (actionId == R.id.btnEqually && state == State.SECOND_ARG_INPUT && inputStr.length() > 0) {
             secondArg = Double.parseDouble(inputStr.toString());
-            state = State.resultShow;
+            state = State.RESULT_SHOW;
             inputStr.setLength(0);
             switch (actionSelected) {
                 case R.id.btnPlus:
@@ -136,9 +134,9 @@ public class CalculatorPresenter implements Parcelable {
                     inputStr.append(firstArg / secondArg);
                     break;
             }
-        } else if (inputStr.length() > 0 && state == State.firstArgInput && actionId != R.id.btnEqually) {
+        } else if (inputStr.length() > 0 && state == State.FIRST_ARG_INPUT && actionId != R.id.btnEqually) {
             firstArg = Double.parseDouble(inputStr.toString());
-            state = State.operationSelected;
+            state = State.OPERATION_SELECTED;
             actionSelected = actionId;
 
         }
@@ -150,17 +148,17 @@ public class CalculatorPresenter implements Parcelable {
         switch (state) {
             default:
                 return inputStr.toString();
-            case operationSelected:
+            case OPERATION_SELECTED:
                 return str.append(firstArg).append(' ')
                         .append(getOperationChar())
                         .toString();
-            case secondArgInput:
+            case SECOND_ARG_INPUT:
                 return str.append(firstArg).append(' ')
                         .append(getOperationChar())
                         .append(' ')
                         .append(inputStr)
                         .toString();
-            case resultShow:
+            case RESULT_SHOW:
                 return str.append(firstArg).append(' ')
                         .append(getOperationChar())
                         .append(' ')
@@ -188,7 +186,7 @@ public class CalculatorPresenter implements Parcelable {
 
 
     public void onClear() {
-        state = State.firstArgInput;
+        state = State.FIRST_ARG_INPUT;
         inputStr.setLength(0);
     }
 }
