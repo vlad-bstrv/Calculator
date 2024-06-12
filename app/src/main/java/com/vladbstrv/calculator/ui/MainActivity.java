@@ -1,15 +1,25 @@
 package com.vladbstrv.calculator.ui;
 
+import static com.vladbstrv.calculator.ui.SettingsActivity.ARG_THEME;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.vladbstrv.calculator.R;
+import com.vladbstrv.calculator.domain.Theme;
+import com.vladbstrv.calculator.storage.ThemeStorage;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private TextView tvInput;
 
@@ -17,10 +27,31 @@ public class MainActivity extends AppCompatActivity{
 
     final static String inputKey = "INPUT";
 
+    private ThemeStorage storage;
+
+    private final ActivityResultLauncher<Intent> settingsLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                if (result.getData() != null) {
+                    Theme theme = (Theme) result.getData().getSerializableExtra(ARG_THEME);
+
+                    storage.setTheme(theme);
+                    recreate();
+                }
+            }
+        }
+    });
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        storage = new ThemeStorage(this);
+        setTheme(storage.getTheme().getTheme());
+
         setContentView(R.layout.activity_main);
 
         tvInput = findViewById(R.id.tvInput);
@@ -78,6 +109,17 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 presenter.onClear();
                 tvInput.setText(presenter.getText());
+            }
+        });
+
+        findViewById(R.id.btn_settings).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                Theme theme = storage.getTheme();
+                intent.putExtra(ARG_THEME, theme);
+
+                settingsLauncher.launch(intent);
             }
         });
     }

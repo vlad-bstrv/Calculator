@@ -8,4 +8,5 @@
     <dimen name="tvInput_textSize">50sp</dimen>
     <dimen name="tvInput_padding">16dp</dimen>
     <dimen name="button_height_land">60dp</dimen>
+    <dimen name="margin_settings_button">8dp</dimen>
 </resources>
